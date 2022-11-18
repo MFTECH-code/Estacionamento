@@ -1,3 +1,4 @@
+using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
 using Xunit;
 
@@ -33,6 +34,21 @@ namespace Estacionamento.Tests
         public void ValidaNomeProprietario()
         {
 
+        }
+
+        [Fact]
+        public void DadosVeiculo()
+        {
+            var veiculo = new Veiculo();
+            veiculo.Proprietario = "José";
+            veiculo.Tipo = TipoVeiculo.Automovel;
+            veiculo.Cor = "verde";
+            veiculo.Modelo = "Fusca";
+            veiculo.Placa = "asd-9999";
+
+            var dados = veiculo.ToString();
+
+            Assert.Contains("Tipo do Veículo: Automovel", dados);
         }
     }
 }

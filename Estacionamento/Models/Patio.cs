@@ -85,17 +85,10 @@ namespace Alura.Estacionamento.Modelos
             return registro;
         }
 
-        public Veiculo AlteraDadosVeiculo(Veiculo veiculoAlterado)
+        public Veiculo? PesquisaVeiculo(string placa)
         {
-            // Como estamos trabalhando com array de objetos,
-            // Podemos utilizar os recursos do `Linq to Objetcs` do .NET
-            var veiculoTemp =  (from veiculo in this.Veiculos
-                           where veiculo.Placa == veiculoAlterado.Placa
-                           select veiculo).SingleOrDefault();
-            veiculoTemp.AlteraDadosVeiculo(veiculoAlterado);
-            return veiculoTemp;
-
-         }
+            return Veiculos.FirstOrDefault(v => v.Placa == placa);
+        }
 
         public Veiculo PesquisaVeiculoPorTicket(string ticket)
         {
@@ -115,6 +108,14 @@ namespace Alura.Estacionamento.Modelos
                              where veiculo.Placa == placa 
                              select veiculo).SingleOrDefault();
             return encontrado;
+        }
+
+        public Veiculo AlteraDadosVeiculo(Veiculo veiculoAlterado)
+        {
+            var veiculoTemp = Veiculos.FirstOrDefault(v => v.Placa == veiculoAlterado.Placa);
+            veiculoTemp.AlterarDados(veiculoAlterado);
+            
+            return veiculoTemp;
         }
 
         private string GerarTicket(Veiculo veiculo){
