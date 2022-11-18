@@ -1,10 +1,12 @@
 using Alura.Estacionamento.Modelos;
+using Xunit;
 
 namespace Estacionamento.Tests
 {
     public class VeiculoTest
     {
-        [Fact]
+        [Fact(DisplayName = "Teste do método acelerar")]
+        [Trait("Funcionalidade", "Acelerar")]
         public void TestaVeiculoAcelerar()
         {
             // Arrange -> Preparação do cenário para realizar o teste
@@ -15,7 +17,8 @@ namespace Estacionamento.Tests
             Assert.Equal(100, veiculo.VelocidadeAtual);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Teste do método frear")]
+        [Trait("Funcionalidade", "Frear")]
         public void TestaVeiculoFrear()
         {
             // Arrange
@@ -24,6 +27,12 @@ namespace Estacionamento.Tests
             veiculo.Frear(10);
             // Assert
             Assert.Equal(-150, veiculo.VelocidadeAtual);
+        }
+
+        [Fact(DisplayName = "Validação de nome do proprietário", Skip = "Teste ainda não implementado. Ignorar")]
+        public void ValidaNomeProprietario()
+        {
+
         }
     }
 }

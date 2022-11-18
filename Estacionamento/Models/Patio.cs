@@ -39,7 +39,7 @@ namespace Alura.Estacionamento.Modelos
             this.Veiculos.Add(veiculo);            
         }
 
-        public string RegistrarSaidaVeiculo(String placa)
+        public string RegistrarSaidaVeiculo(string placa)
         {
             Veiculo encontrado = null;
             string registro=string.Empty;
