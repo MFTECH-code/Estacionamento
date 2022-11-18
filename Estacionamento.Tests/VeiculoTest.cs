@@ -60,6 +60,29 @@ namespace Estacionamento.Tests
             Assert.Contains("Tipo do Veículo: Automovel", dados);
         }
 
+        [Fact]
+        public void TestaNomeProprietarioDoVeiculoComMenosDeTresCaracteres()
+        {
+            // Arrange
+            var nome = "ab";
+            
+            // Assert
+            Assert.Throws<FormatException>(
+                // Act
+                () => new Veiculo(nome));
+        }
+
+        [Fact]
+        public void TestaMensagemDeExcessaoDoQuartoCaractereDaPlata()
+        {
+            // Arrange
+            var placa = "ASDF0000";
+            // Act
+            var mensagem = Assert.Throws<FormatException>(() => new Veiculo().Placa = placa);
+            // Assert
+            Assert.Equal("O 4° caractere deve ser um hífen", mensagem.Message);
+        }
+
         public void Dispose()
         {
             _saidaConsoleTeste.WriteLine("Clenup");
