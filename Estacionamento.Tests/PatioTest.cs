@@ -7,7 +7,7 @@ namespace Estacionamento.Tests
     public class PatioTest
     {
         [Fact]
-        public void ValidaFaturamento()
+        public void ValidaFaturamentoDoEstacionamentoComUmVeiculo()
         {
             // Arrange
             var estacionamento = new Patio();
@@ -32,7 +32,7 @@ namespace Estacionamento.Tests
         [InlineData("Severino", "José", "ASD-1234", "preto", "Gol")]
         [InlineData("Marcos", "Josias", "ASD-4321", "Acul", "Fusca")]
         [InlineData("Cleber", "Vagner", "ASD-5678", "Cinza", "Opala")]
-        public void ValidaFaturamentoComVariosVeiculos(
+        public void ValidaFaturamentoDoEstacionamentoComVariosVeiculos(
             string nomeOperador,
             string proprietario,
             string placa,
@@ -60,7 +60,7 @@ namespace Estacionamento.Tests
 
         [Theory]
         [InlineData("Cleber", "Vagner", "ASD-5678", "Cinza", "Opala")]
-        public void LocalizaVeiculoNoPatio(
+        public void LocalizaVeiculoNoPatioComBaseNaPlaca(
             string nomeOperador,
             string proprietario,
             string placa,
@@ -88,7 +88,7 @@ namespace Estacionamento.Tests
         }
 
         [Fact]
-        public void AlteraDadosVeiculo()
+        public void AlteraDadosDoProprioVeiculo()
         {
             // Arrange
             var estacionamento = new Patio();
