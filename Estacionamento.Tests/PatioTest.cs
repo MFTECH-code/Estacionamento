@@ -1,20 +1,33 @@
 ﻿using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Estacionamento.Tests
 {
-    public class PatioTest
+    public class PatioTest : IDisposable
     {
+        private Veiculo veiculo;
+        private Patio estacionamento;
+        private ITestOutputHelper _saidaConsoleTeste;
+
+        public PatioTest(ITestOutputHelper saidaConsoleTeste)
+        {
+            _saidaConsoleTeste = saidaConsoleTeste;
+            _saidaConsoleTeste.WriteLine("Setup");
+            veiculo = new Veiculo();
+            estacionamento = new Patio();
+        }
+
         [Fact]
         public void ValidaFaturamentoDoEstacionamentoComUmVeiculo()
         {
             // Arrange
-            var estacionamento = new Patio();
+            //var estacionamento = new Patio();
             var operador = new Operador();
             operador.Nome = "Severino";
             estacionamento.OperadorPatio = operador;
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             veiculo.Proprietario = "José";
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = "verde";
@@ -40,11 +53,11 @@ namespace Estacionamento.Tests
             string modelo)
         {
             // Arrange
-            var estacionamento = new Patio();
+           // var estacionamento = new Patio();
             var operador = new Operador();
             operador.Nome = nomeOperador;
             estacionamento.OperadorPatio = operador;
-            var veiculo = new Veiculo();
+           // var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = cor;
@@ -68,11 +81,11 @@ namespace Estacionamento.Tests
             string modelo)
         {
             // Arrange
-            var estacionamento = new Patio();
+            //var estacionamento = new Patio();
             var operador = new Operador();
             operador.Nome = nomeOperador;
             estacionamento.OperadorPatio = operador;
-            var veiculo = new Veiculo();
+           // var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = cor;
@@ -91,11 +104,11 @@ namespace Estacionamento.Tests
         public void AlteraDadosDoProprioVeiculo()
         {
             // Arrange
-            var estacionamento = new Patio();
+           // var estacionamento = new Patio();
             var operador = new Operador();
             operador.Nome = "Severino";
             estacionamento.OperadorPatio = operador;
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             veiculo.Proprietario = "José";
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = "verde";
@@ -114,6 +127,11 @@ namespace Estacionamento.Tests
 
             // Assert
             Assert.Equal(alterado.Cor, veiculoAlterado.Cor);
+        }
+
+        public void Dispose()
+        {
+            _saidaConsoleTeste.WriteLine("Cleanup");
         }
     }
 }
