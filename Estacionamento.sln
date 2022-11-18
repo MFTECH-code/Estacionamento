@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estacionamento", "Estacionamento\Estacionamento.csproj", "{7E4D19D1-462F-4EDA-9317-6DDF6C6A1012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estacionamento.Tests", "Estacionamento.Tests\Estacionamento.Tests.csproj", "{72B49511-FC42-4115-BE84-624E21C6A0E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E4D19D1-462F-4EDA-9317-6DDF6C6A1012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4D19D1-462F-4EDA-9317-6DDF6C6A1012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4D19D1-462F-4EDA-9317-6DDF6C6A1012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4D19D1-462F-4EDA-9317-6DDF6C6A1012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B49511-FC42-4115-BE84-624E21C6A0E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B49511-FC42-4115-BE84-624E21C6A0E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B49511-FC42-4115-BE84-624E21C6A0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B49511-FC42-4115-BE84-624E21C6A0E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53D36A6B-532F-4FE7-89BD-06024CACC3E0}
+	EndGlobalSection
+EndGlobal
